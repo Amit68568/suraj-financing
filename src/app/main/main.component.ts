@@ -28,6 +28,15 @@ export class MainComponent {
   emiResult: number | null = null;
   totalPayment: number | null = null;
 
+  // Contact Form Model
+  contactForm = {
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    message: ''
+  };
+
   constructor() {
     this.calculateSIP();
     this.calculateEMI();
@@ -53,5 +62,26 @@ export class MainComponent {
     // EMI Formula: [P * R * (1+R)^N] / [(1+R)^N-1]
     this.emiResult = (this.loanAmount * monthlyRate * Math.pow(1 + monthlyRate, months)) / (Math.pow(1 + monthlyRate, months) - 1);
     this.totalPayment = this.emiResult * months;
+  }
+
+  sendMessage() {
+    const { firstName, lastName, email, phone, message } = this.contactForm;
+
+    if (!firstName || !email || !message) {
+      alert('Please fill in at least Name, Email, and Message.');
+      return;
+    }
+
+    const recipients = 'kamal.insurance@gmail.com,surajKr80109@gmail.com,amit68568@gmail.com';
+    const subject = `New Inquiry from ${firstName} ${lastName}`;
+    const body = `Name: ${firstName} ${lastName}
+Email: ${email}
+Phone: ${phone}
+
+Message:
+${message}`;
+
+    const mailtoLink = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoLink;
   }
 }

@@ -345,30 +345,44 @@
                   <p class="text-secondary mb-0">kamal.insurance@gmail.com</p>
                 </div>
               </div>
+
+              <div class="d-flex gap-3 align-items-start">
+                <div class="icon-box bg-primary bg-opacity-10 text-primary p-3 rounded-circle">
+                  <i class="bi bi-telephone fs-5"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Call Us</h5>
+                  <p class="text-secondary mb-0">9873432156, 8010909383</p>
+                </div>
+              </div>
             </div>
           </div>
 
           <div class="col-lg-6">
-            <form>
+            <form (ngSubmit)="sendMessage()">
               <div class="row g-3">
                 <div class="col-md-6">
                   <input type="text" class="form-control bg-dark border-secondary text-white py-3"
-                    placeholder="First Name">
+                    placeholder="First Name" name="firstName" [(ngModel)]="contactForm.firstName">
                 </div>
                 <div class="col-md-6">
                   <input type="text" class="form-control bg-dark border-secondary text-white py-3"
-                    placeholder="Last Name">
+                    placeholder="Last Name" name="lastName" [(ngModel)]="contactForm.lastName">
                 </div>
-                <div class="col-12">
+                <div class="col-md-6">
                   <input type="email" class="form-control bg-dark border-secondary text-white py-3"
-                    placeholder="Email Address">
+                    placeholder="Email Address" name="email" [(ngModel)]="contactForm.email">
+                </div>
+                <div class="col-md-6">
+                  <input type="tel" class="form-control bg-dark border-secondary text-white py-3"
+                    placeholder="Phone Number" name="phone" [(ngModel)]="contactForm.phone">
                 </div>
                 <div class="col-12">
                   <textarea class="form-control bg-dark border-secondary text-white py-3" rows="4"
-                    placeholder="Your Message"></textarea>
+                    placeholder="Your Message" name="message" [(ngModel)]="contactForm.message"></textarea>
                 </div>
                 <div class="col-12">
-                  <button type="button" class="btn btn-primary-gradient w-100 py-3">Send Message</button>
+                  <button type="submit" class="btn btn-primary-gradient w-100 py-3">Send Message</button>
                 </div>
               </div>
             </form>
