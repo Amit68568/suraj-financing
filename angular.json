@@ -73,10 +73,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "suraj-investment:build:production"
+              "buildTarget": "suraj-investment:build:production"
             },
             "development": {
-              "browserTarget": "suraj-investment:build:development"
+              "buildTarget": "suraj-investment:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -84,7 +84,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "suraj-investment:build"
+            "buildTarget": "suraj-investment:build"
           }
         },
         "test": {
@@ -107,6 +107,5 @@
         }
       }
     }
-  },
-  "defaultProject": "suraj-investment"
+  }
 }
