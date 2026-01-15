@@ -92,41 +92,7 @@ npm test
 ```bash
 npm run watch
 # Builds the app in watch mode for development
-```
 
-## 📁 Project Structure
-
-```
-src/
-├── app/
-│   ├── app.component.ts          # Root component
-│   ├── app.component.html        # Root template
-│   ├── app.component.scss        # Root styles
-│   ├── app-routing.module.ts     # Routing configuration
-│   ├── header/
-│   │   ├── header.component.ts
-│   │   ├── header.component.html
-│   │   └── header.component.scss
-│   ├── main/
-│   │   ├── main.component.ts
-│   │   ├── main.component.html
-│   │   └── main.component.scss
-│   └── footer/
-│       ├── footer.component.ts
-│       ├── footer.component.html
-│       └── footer.component.scss
-├── assets/
-│   ├── kamal2.jpeg               # Kamal's profile image
-│   └── suraj.png                 # Suraj's profile image
-├── environments/
-│   ├── environment.ts            # Development environment
-│   └── environment.prod.ts       # Production environment
-├── index.html                    # HTML entry point
-├── main.ts                       # Application bootstrap
-├── polyfills.ts                  # Browser polyfills
-├── styles.scss                   # Global styles
-└── test.ts                       # Test configuration
-```
 
 ## 🎨 Design Features
 
