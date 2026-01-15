@@ -1,17 +1,67 @@
 <div class="main-container">
 
   <!-- Hero Section -->
-  <section class="hero-section">
+  <section class="hero-section d-flex align-items-center position-relative">
     <div class="container-lg">
       <div class="row align-items-center">
-        <div class="col-lg-6 hero-content">
-          <h1 class="hero-title">Secure Your Financial Future</h1>
-          <p class="hero-subtitle">Expert investment and insurance solutions tailored to your needs. Build wealth with confidence.</p>
-          <button class="btn btn-hero">Get Started</button>
+        <div class="col-lg-6 hero-content animate-fade-up">
+          <span class="badge glass-effect text-white mb-3 px-3 py-2 rounded-pill border-0">
+            <i class="bi bi-shield-check me-2"></i>Trusted by 5000+ Families
+          </span>
+          <h1 class="hero-title display-4 mb-4">Secure Your <span class="text-gradient">Financial Future</span> With
+            Confidence</h1>
+          <p class="hero-subtitle lead mb-5">Expert investment strategies and insurance solutions tailored to build and
+            protect your wealth.</p>
+          <div class="d-flex gap-3">
+            <button class="btn btn-primary-gradient" (click)="setTab('sip');"
+              onclick="document.getElementById('calculator').scrollIntoView({behavior: 'smooth'})">
+              Start Investing <i class="bi bi-arrow-right ms-2"></i>
+            </button>
+            <button class="btn btn-glass"
+              onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
+              Contact Us
+            </button>
+          </div>
         </div>
-        <div class="col-lg-6 hero-image">
-          <div class="floating-box">
-            <i class="bi bi-graph-up-arrow"></i>
+        <div class="col-lg-6 hero-image position-relative mt-5 mt-lg-0">
+          <div class="floating-card glass-effect p-4 rounded-4 position-absolute top-0 end-0 animate-float"
+            style="z-index: 2; width: 200px;">
+            <div class="d-flex align-items-center gap-3 mb-2">
+              <div class="icon-box bg-success bg-opacity-10 text-success rounded-circle p-2">
+                <i class="bi bi-graph-up-arrow fs-4"></i>
+              </div>
+              <div>
+                <small class="text-secondary d-block">Return</small>
+                <span class="fw-bold text-success">+18.5%</span>
+              </div>
+            </div>
+            <div class="progress" style="height: 6px;">
+              <div class="progress-bar bg-success" role="progressbar" style="width: 75%"></div>
+            </div>
+          </div>
+
+          <div
+            class="hero-gfx glass-effect rounded-circle position-relative mx-auto d-flex align-items-center justify-content-center"
+            style="width: 400px; height: 400px; background: rgba(255,255,255,0.02);">
+            <i class="bi bi-piggy-bank text-gradient" style="font-size: 10rem;"></i>
+          </div>
+
+          <div class="floating-card glass-effect p-3 rounded-4 position-absolute bottom-0 start-0 animate-float-delayed"
+            style="z-index: 2;">
+            <div class="d-flex gap-3 align-items-center">
+              <div class="avatar-group d-flex">
+                <div
+                  class="avatar bg-primary rounded-circle d-flex align-items-center justify-content-center border border-2 border-dark"
+                  style="width:40px;height:40px;">S</div>
+                <div
+                  class="avatar bg-info rounded-circle d-flex align-items-center justify-content-center border border-2 border-dark"
+                  style="width:40px;height:40px; margin-left: -10px;">K</div>
+              </div>
+              <div>
+                <div class="fw-bold">Expert Support</div>
+                <small class="text-secondary">24/7 Assistance</small>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -19,77 +69,196 @@
   </section>
 
   <!-- Services Section -->
-  <section class="our-service" id="service">
+  <section class="section-padding" id="service">
     <div class="container-lg">
-      <div class="section-header text-center">
-        <h2 class="section-title">Our <span class="highlight">Services</span></h2>
-        <p class="section-subtitle">Comprehensive financial solutions for every stage of your life</p>
+      <div class="text-center mb-5">
+        <h2 class="section-title mb-3">Our Premium <span class="text-gradient">Services</span></h2>
+        <p class="text-secondary mx-auto" style="max-width: 600px;">Comprehensive financial solutions designed to
+          protect your assets and grow your wealth.</p>
       </div>
-      
-      <div class="row g-4 mt-5 services-grid">
+
+      <div class="row g-4">
+        <!-- Service Card 1 -->
         <div class="col-md-6 col-lg-4">
-          <div class="service-card">
-            <div class="card-icon">
-              <i class="bi bi-heart-pulse"></i>
+          <div class="service-card glass-effect p-4 h-100 rounded-4 transition-transform hover-up">
+            <div class="icon-wrapper mb-4 text-gradient bg-white bg-opacity-5 rounded-3 d-inline-flex p-3">
+              <i class="bi bi-heart-pulse fs-2"></i>
             </div>
-            <h4 class="card-title">Life Insurance</h4>
-            <p class="card-text">Life insurance can help your family to continue with their existing lifestyle even if you are not there in future.</p>
-            <a href="#" class="card-link">Learn More <i class="bi bi-arrow-right"></i></a>
+            <h4 class="mb-3">Life Insurance</h4>
+            <p class="mb-4">Secure your family's lifestyle and future with our comprehensive term and endowment plans.
+            </p>
+            <a href="#" class="btn-link text-primary text-decoration-none">Learn More <i
+                class="bi bi-arrow-right ms-1"></i></a>
           </div>
         </div>
 
+        <!-- Service Card 2 -->
         <div class="col-md-6 col-lg-4">
-          <div class="service-card">
-            <div class="card-icon">
-              <i class="bi bi-prescription2"></i>
+          <div class="service-card glass-effect p-4 h-100 rounded-4 transition-transform hover-up">
+            <div class="icon-wrapper mb-4 text-gradient bg-white bg-opacity-5 rounded-3 d-inline-flex p-3">
+              <i class="bi bi-prescription2 fs-2"></i>
             </div>
-            <h4 class="card-title">Health Insurance</h4>
-            <p class="card-text">Health insurance can help in protecting you from unexpected, high medical costs.</p>
-            <a href="#" class="card-link">Learn More <i class="bi bi-arrow-right"></i></a>
+            <h4 class="mb-3">Health Insurance</h4>
+            <p class="mb-4">Comprehensive coverage for unexpected medical expenses with cashless hospitalization.</p>
+            <a href="#" class="btn-link text-primary text-decoration-none">Learn More <i
+                class="bi bi-arrow-right ms-1"></i></a>
           </div>
         </div>
 
+        <!-- Service Card 3 -->
         <div class="col-md-6 col-lg-4">
-          <div class="service-card">
-            <div class="card-icon">
-              <i class="bi bi-car-front-fill"></i>
+          <div class="service-card glass-effect p-4 h-100 rounded-4 transition-transform hover-up">
+            <div class="icon-wrapper mb-4 text-gradient bg-white bg-opacity-5 rounded-3 d-inline-flex p-3">
+              <i class="bi bi-car-front-fill fs-2"></i>
             </div>
-            <h4 class="card-title">Non-Life Insurance</h4>
-            <p class="card-text">Your home is your most precious asset. Protect it with comprehensive home insurance coverage.</p>
-            <a href="#" class="card-link">Learn More <i class="bi bi-arrow-right"></i></a>
+            <h4 class="mb-3">Motor Insurance</h4>
+            <p class="mb-4">Protect your vehicles with comprehensive damage and third-party liability coverage.</p>
+            <a href="#" class="btn-link text-primary text-decoration-none">Learn More <i
+                class="bi bi-arrow-right ms-1"></i></a>
           </div>
         </div>
 
+        <!-- Service Card 4 -->
         <div class="col-md-6 col-lg-4">
-          <div class="service-card">
-            <div class="card-icon">
-              <i class="bi bi-currency-rupee"></i>
+          <div class="service-card glass-effect p-4 h-100 rounded-4 transition-transform hover-up">
+            <div class="icon-wrapper mb-4 text-gradient bg-white bg-opacity-5 rounded-3 d-inline-flex p-3">
+              <i class="bi bi-currency-rupee fs-2"></i>
             </div>
-            <h4 class="card-title">Income Protection</h4>
-            <p class="card-text">Preserve your wealth for long term use with expert income protection planning strategies.</p>
-            <a href="#" class="card-link">Learn More <i class="bi bi-arrow-right"></i></a>
+            <h4 class="mb-3">Wealth Management</h4>
+            <p class="mb-4">Expert strategies for income protection and long-term wealth creation.</p>
+            <a href="#" class="btn-link text-primary text-decoration-none">Learn More <i
+                class="bi bi-arrow-right ms-1"></i></a>
           </div>
         </div>
 
+        <!-- Service Card 5 -->
         <div class="col-md-6 col-lg-4">
-          <div class="service-card">
-            <div class="card-icon">
-              <i class="bi bi-clock-history"></i>
+          <div class="service-card glass-effect p-4 h-100 rounded-4 transition-transform hover-up">
+            <div class="icon-wrapper mb-4 text-gradient bg-white bg-opacity-5 rounded-3 d-inline-flex p-3">
+              <i class="bi bi-piggy-bank fs-2"></i>
             </div>
-            <h4 class="card-title">Retirement Planning</h4>
-            <p class="card-text">By planning for your retirement you can continue to enjoy your current lifestyle without compromising.</p>
-            <a href="#" class="card-link">Learn More <i class="bi bi-arrow-right"></i></a>
+            <h4 class="mb-3">Retirement Planning</h4>
+            <p class="mb-4">Build a retirement corpus to maintain your lifestyle post-retirement worry-free.</p>
+            <a href="#" class="btn-link text-primary text-decoration-none">Learn More <i
+                class="bi bi-arrow-right ms-1"></i></a>
           </div>
         </div>
 
+        <!-- Service Card 6 -->
         <div class="col-md-6 col-lg-4">
-          <div class="service-card">
-            <div class="card-icon">
-              <i class="bi bi-mortarboard"></i>
+          <div class="service-card glass-effect p-4 h-100 rounded-4 transition-transform hover-up">
+            <div class="icon-wrapper mb-4 text-gradient bg-white bg-opacity-5 rounded-3 d-inline-flex p-3">
+              <i class="bi bi-mortarboard fs-2"></i>
             </div>
-            <h4 class="card-title">Children's Future</h4>
-            <p class="card-text">Good education is the best gift for your child. Secure their future with our investment plans.</p>
-            <a href="#" class="card-link">Learn More <i class="bi bi-arrow-right"></i></a>
+            <h4 class="mb-3">Child Education</h4>
+            <p class="mb-4">Secure your child's higher education dreams with targeted investment plans.</p>
+            <a href="#" class="btn-link text-primary text-decoration-none">Learn More <i
+                class="bi bi-arrow-right ms-1"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Financial Calculator Section -->
+  <section class="section-padding position-relative overflow-hidden" id="calculator">
+    <div class="container-lg align-items-center">
+      <div class="row g-5 align-items-center">
+        <div class="col-lg-5">
+          <h2 class="section-title mb-4">Plan Your <span class="text-gradient">Goals</span></h2>
+          <p class="text-secondary mb-4">Use our financial calculators to plan your investments and loans efficiently.
+          </p>
+
+          <div class="calculator-tabs d-flex gap-2 mb-4">
+            <button class="btn flex-grow-1" [class.btn-primary-gradient]="activeTab === 'sip'"
+              [class.btn-glass]="activeTab !== 'sip'" (click)="setTab('sip')">SIP Calculator</button>
+            <button class="btn flex-grow-1" [class.btn-primary-gradient]="activeTab === 'emi'"
+              [class.btn-glass]="activeTab !== 'emi'" (click)="setTab('emi')">EMI Calculator</button>
+          </div>
+
+          <div class="glass-effect p-4 rounded-4" *ngIf="activeTab === 'sip'">
+            <div class="mb-3">
+              <label class="form-label text-secondary small">Monthly Investment</label>
+              <div class="input-group">
+                <span class="input-group-text bg-transparent border-end-0 text-white border-secondary">₹</span>
+                <input type="number"
+                  class="form-control bg-transparent text-white border-start-0 border-secondary focus-ring-0"
+                  [(ngModel)]="sipAmount" (ngModelChange)="calculateSIP()">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label text-secondary small">Duration (Years)</label>
+              <input type="range" class="form-range" min="1" max="30" [(ngModel)]="sipYears"
+                (ngModelChange)="calculateSIP()">
+              <div class="d-flex justify-content-between text-secondary small">
+                <span>1 Year</span>
+                <span class="text-white">{{sipYears}} Years</span>
+                <span>30 Years</span>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label text-secondary small">Expected Return (p.a)</label>
+              <input type="range" class="form-range" min="5" max="25" step="0.5" [(ngModel)]="sipRate"
+                (ngModelChange)="calculateSIP()">
+              <div class="text-end text-white small">{{sipRate}}%</div>
+            </div>
+          </div>
+
+          <div class="glass-effect p-4 rounded-4" *ngIf="activeTab === 'emi'">
+            <div class="mb-3">
+              <label class="form-label text-secondary small">Loan Amount</label>
+              <div class="input-group">
+                <span class="input-group-text bg-transparent border-end-0 text-white border-secondary">₹</span>
+                <input type="number" class="form-control bg-transparent text-white border-start-0 border-secondary"
+                  [(ngModel)]="loanAmount" (ngModelChange)="calculateEMI()">
+              </div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label text-secondary small">Tenure (Years)</label>
+              <input type="range" class="form-range" min="1" max="30" [(ngModel)]="loanYears"
+                (ngModelChange)="calculateEMI()">
+              <div class="text-end text-white small">{{loanYears}} Years</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label text-secondary small">Interest Rate (% p.a)</label>
+              <input type="range" class="form-range" min="5" max="20" step="0.1" [(ngModel)]="loanRate"
+                (ngModelChange)="calculateEMI()">
+              <div class="text-end text-white small">{{loanRate}}%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6 offset-lg-1">
+          <div class="glass-effect p-5 rounded-4 text-center">
+            <div *ngIf="activeTab === 'sip'">
+              <h3 class="text-secondary mb-2">Estimated Value</h3>
+              <h1 class="display-3 fw-bold text-gradient mb-4">{{sipResult | currency:'INR':'symbol':'1.0-0'}}</h1>
+              <div class="row g-4 text-start">
+                <div class="col-6">
+                  <small class="text-secondary d-block">Invested Amount</small>
+                  <h5 class="text-white">{{sipTotalInvested | currency:'INR':'symbol':'1.0-0'}}</h5>
+                </div>
+                <div class="col-6">
+                  <small class="text-secondary d-block">Wealth Gained</small>
+                  <h5 class="text-success">+{{(sipResult! - sipTotalInvested!) | currency:'INR':'symbol':'1.0-0'}}</h5>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="activeTab === 'emi'">
+              <h3 class="text-secondary mb-2">Monthly EMI</h3>
+              <h1 class="display-3 fw-bold text-gradient mb-4">{{emiResult | currency:'INR':'symbol':'1.0-0'}}</h1>
+              <div class="row g-4 text-start">
+                <div class="col-6">
+                  <small class="text-secondary d-block">Total Interest</small>
+                  <h5 class="text-danger">{{(totalPayment! - loanAmount) | currency:'INR':'symbol':'1.0-0'}}</h5>
+                </div>
+                <div class="col-6">
+                  <small class="text-secondary d-block">Total Payment</small>
+                  <h5 class="text-white">{{totalPayment | currency:'INR':'symbol':'1.0-0'}}</h5>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -97,44 +266,48 @@
   </section>
 
   <!-- About Us Section -->
-  <section id="about-us" class="about-section">
+  <section id="about-us" class="section-padding">
     <div class="container-lg">
-      <div class="section-header text-center">
-        <h2 class="section-title">About <span class="highlight">Us</span></h2>
-        <p class="section-subtitle">Meet the experts behind your financial success</p>
+      <div class="text-center mb-5">
+        <h2 class="section-title">Meet The <span class="text-gradient">Experts</span></h2>
+        <p class="text-secondary">Dedicated professionals committed to your financial success</p>
       </div>
 
-      <div class="row g-5 mt-5 team-members">
-        <div class="col-md-6 col-lg-5 ms-auto">
-          <div class="team-card">
-            <div class="team-image">
-              <img src="../../assets/kamal.png" alt="Kamal Kishore">
+      <div class="row g-5 justify-content-center">
+        <div class="col-md-6 col-lg-5">
+          <div class="team-card glass-effect p-4 rounded-4 text-center h-100 hover-up">
+            <div class="team-image mx-auto mb-4 rounded-circle p-1 bg-gradient-primary"
+              style="width: 150px; height: 150px; background: var(--gradient-primary);">
+              <img src="../../assets/kamal.png" alt="Kamal Kishore"
+                class="w-100 h-100 rounded-circle object-fit-cover border border-4 border-dark">
             </div>
-            <div class="team-info">
-              <h3>Kamal Kishore</h3>
-              <p class="team-role">Finance Expert</p>
-              <p class="team-experience">20+ years of experience in Finance, Gold Loans, and Insurance</p>
-              <div class="team-contact">
-                <p><i class="bi bi-telephone"></i> 9873432156, 7011085658</p>
-                <p><i class="bi bi-envelope"></i> kamal.insurance@gmail.com</p>
-              </div>
+            <h3>Kamal Kishore</h3>
+            <span class="badge bg-primary bg-opacity-25 text-primary mb-3">Finance Expert</span>
+            <p class="text-secondary mb-4">20+ years of experience in Finance, Gold Loans, and Insurance.</p>
+            <div class="d-flex flex-column gap-2 text-start bg-dark bg-opacity-50 p-3 rounded-3">
+              <a href="tel:9873432156" class="text-decoration-none text-light"><i
+                  class="bi bi-telephone me-2 text-primary"></i> 9873432156</a>
+              <a href="mailto:kamal.insurance@gmail.com" class="text-decoration-none text-light"><i
+                  class="bi bi-envelope me-2 text-primary"></i> kamal.insurance@gmail.com</a>
             </div>
           </div>
         </div>
 
-        <div class="col-md-6 col-lg-5 me-auto">
-          <div class="team-card">
-            <div class="team-image">
-              <img src="../../assets/suraj.png" alt="Suraj Kumar">
+        <div class="col-md-6 col-lg-5">
+          <div class="team-card glass-effect p-4 rounded-4 text-center h-100 hover-up">
+            <div class="team-image mx-auto mb-4 rounded-circle p-1 bg-gradient-primary"
+              style="width: 150px; height: 150px; background: var(--gradient-primary);">
+              <img src="../../assets/suraj.png" alt="Suraj Kumar"
+                class="w-100 h-100 rounded-circle object-fit-cover border border-4 border-dark">
             </div>
-            <div class="team-info">
-              <h3>Suraj Kumar</h3>
-              <p class="team-role">Loan Specialist</p>
-              <p class="team-experience">5+ years of expertise in Home Loans, Business Loans, and Personal Loans</p>
-              <div class="team-contact">
-                <p><i class="bi bi-telephone"></i> 8010909383</p>
-                <p><i class="bi bi-envelope"></i> surajKr80109@gmail.com</p>
-              </div>
+            <h3>Suraj Kumar</h3>
+            <span class="badge bg-info bg-opacity-25 text-info mb-3">Loan Specialist</span>
+            <p class="text-secondary mb-4">5+ years of expertise in Home Loans, Business Loans, and Personal Loans.</p>
+            <div class="d-flex flex-column gap-2 text-start bg-dark bg-opacity-50 p-3 rounded-3">
+              <a href="tel:8010909383" class="text-decoration-none text-light"><i
+                  class="bi bi-telephone me-2 text-info"></i> 8010909383</a>
+              <a href="mailto:surajKr80109@gmail.com" class="text-decoration-none text-light"><i
+                  class="bi bi-envelope me-2 text-info"></i> surajKr80109@gmail.com</a>
             </div>
           </div>
         </div>
@@ -142,4 +315,66 @@
     </div>
   </section>
 
+  <!-- Contact Section -->
+  <section id="contact" class="section-padding">
+    <div class="container-lg">
+      <div class="glass-effect rounded-5 p-5 position-relative overflow-hidden">
+        <div class="row g-5">
+          <div class="col-lg-6">
+            <h2 class="mb-4">Get In <span class="text-gradient">Touch</span></h2>
+            <p class="text-secondary mb-5">Ready to start your financial journey? Fill out the form and we will get back
+              to you shortly.</p>
+
+            <div class="d-flex flex-column gap-4">
+              <div class="d-flex gap-3 align-items-start">
+                <div class="icon-box bg-primary bg-opacity-10 text-primary p-3 rounded-circle">
+                  <i class="bi bi-geo-alt fs-5"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Visit Us</h5>
+                  <p class="text-secondary mb-0">New Delhi, India</p>
+                </div>
+              </div>
+
+              <div class="d-flex gap-3 align-items-start">
+                <div class="icon-box bg-primary bg-opacity-10 text-primary p-3 rounded-circle">
+                  <i class="bi bi-envelope fs-5"></i>
+                </div>
+                <div>
+                  <h5 class="mb-1">Email Us</h5>
+                  <p class="text-secondary mb-0">kamal.insurance@gmail.com</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" class="form-control bg-dark border-secondary text-white py-3"
+                    placeholder="First Name">
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control bg-dark border-secondary text-white py-3"
+                    placeholder="Last Name">
+                </div>
+                <div class="col-12">
+                  <input type="email" class="form-control bg-dark border-secondary text-white py-3"
+                    placeholder="Email Address">
+                </div>
+                <div class="col-12">
+                  <textarea class="form-control bg-dark border-secondary text-white py-3" rows="4"
+                    placeholder="Your Message"></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="button" class="btn btn-primary-gradient w-100 py-3">Send Message</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </div>
