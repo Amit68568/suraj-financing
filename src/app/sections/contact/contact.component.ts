@@ -93,16 +93,16 @@ export class ContactComponent {
     this.errors = { firstName: '', email: '', phone: '', message: '' };
     let ok = true;
     if (!this.form.firstName.trim()) { this.errors.firstName = 'First name is required.'; ok = false; }
-    
+
     // Email is now optional, but validate format if provided
     if (this.form.email.trim()) {
       const ep = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!ep.test(this.form.email)) { this.errors.email = 'Please enter a valid email address.'; ok = false; }
     }
-    
+
     // Phone is now mandatory
     if (!this.form.phone.trim()) { this.errors.phone = 'Phone number is required.'; ok = false; }
-    
+
     if (!this.form.message.trim()) { this.errors.message = 'Message is required.'; ok = false; }
     return ok;
   }
@@ -113,7 +113,7 @@ export class ContactComponent {
 
     if (this.submitType === 'whatsapp') {
       const waBody = `*New Inquiry*\n\n*Name:* ${firstName} ${lastName}\n*Email:* ${email}\n*Phone:* ${phone}\n\n*Message:*\n${message}`;
-      window.open(`https://wa.me/918448771203?text=${encodeURIComponent(waBody)}`, '_blank');
+      window.open(`https://wa.me/918010909383?text=${encodeURIComponent(waBody)}`, '_blank');
     } else {
       const recipients = 'kamal.insurance@gmail.com,surajKr80109@gmail.com,amit68568@gmail.com';
       const subject = `New Inquiry from ${firstName} ${lastName}`;
