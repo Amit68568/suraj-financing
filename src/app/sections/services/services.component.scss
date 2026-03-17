@@ -1,0 +1,27 @@
+.service-card {
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.3s ease;
+  &:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.05);
+    border-color: rgba(255,255,255,0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  }
+}
+
+.hover-up { transition: transform 0.3s ease; }
+
+.btn-link-styled {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s ease;
+  &:hover { color: #7C3AED; gap: 8px; }
+}

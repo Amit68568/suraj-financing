@@ -1,0 +1,20 @@
+.team-card {
+  border: 1px solid rgba(255,255,255,0.05);
+  transition: all 0.3s ease;
+  &:hover { transform: translateY(-5px); border-color: rgba(255,255,255,0.2); }
+}
+
+.hover-up { transition: transform 0.3s ease; }
+
+.btn-whatsapp {
+  background: linear-gradient(135deg, #25D366, #128C7E);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 0.6rem 1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  &:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(37,211,102,0.35); color: white; }
+}

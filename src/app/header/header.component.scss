@@ -6,6 +6,11 @@
     padding: 1rem 0;
     transition: all 0.3s ease;
 
+    &.scrolled {
+        background: rgba(15, 23, 42, 0.95);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+    }
+
     .navbar-brand {
         font-family: 'Outfit', sans-serif;
         font-weight: 700;
@@ -55,6 +60,10 @@
         }
 
         &:not(.btn):hover::after {
+            width: 80%;
+        }
+
+        &.active-link:not(.btn)::after {
             width: 80%;
         }
     }
