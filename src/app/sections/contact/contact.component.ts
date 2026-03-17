@@ -45,19 +45,23 @@ import { FormsModule } from '@angular/forms';
                     <input type="text" class="form-control bg-dark border-secondary text-white py-3" placeholder="Last Name" name="lastName" [(ngModel)]="form.lastName">
                   </div>
                   <div class="col-md-6">
-                    <input type="email" class="form-control bg-dark border-secondary text-white py-3" [class.is-invalid]="errors.email" placeholder="Email Address *" name="email" [(ngModel)]="form.email">
+                    <input type="email" class="form-control bg-dark border-secondary text-white py-3" [class.is-invalid]="errors.email" placeholder="Email Address" name="email" [(ngModel)]="form.email">
                     <div class="invalid-feedback">{{errors.email}}</div>
                   </div>
                   <div class="col-md-6">
-                    <input type="tel" class="form-control bg-dark border-secondary text-white py-3" placeholder="Phone Number" name="phone" [(ngModel)]="form.phone">
+                    <input type="tel" class="form-control bg-dark border-secondary text-white py-3" [class.is-invalid]="errors.phone" placeholder="Phone Number *" name="phone" [(ngModel)]="form.phone">
+                    <div class="invalid-feedback">{{errors.phone}}</div>
                   </div>
                   <div class="col-12">
                     <textarea class="form-control bg-dark border-secondary text-white py-3" rows="4" [class.is-invalid]="errors.message" placeholder="Your Message *" name="message" [(ngModel)]="form.message"></textarea>
                     <div class="invalid-feedback">{{errors.message}}</div>
                   </div>
-                  <div class="col-12">
-                    <button type="submit" class="btn btn-primary-gradient w-100 py-3">
-                      <i class="bi bi-send me-2"></i>Send Message
+                  <div class="col-12 d-flex flex-column flex-sm-row gap-3">
+                    <button type="submit" class="btn btn-success w-100 py-3 text-white border-0 d-flex justify-content-center align-items-center" (click)="submitType = 'whatsapp'">
+                      <i class="bi bi-whatsapp me-2"></i>Send via WhatsApp
+                    </button>
+                    <button type="submit" class="btn btn-primary-gradient w-100 py-3 d-flex justify-content-center align-items-center" (click)="submitType = 'email'">
+                      <i class="bi bi-envelope me-2"></i>Send via Email
                     </button>
                   </div>
                 </div>
@@ -72,10 +76,11 @@ import { FormsModule } from '@angular/forms';
 })
 export class ContactComponent {
   form = { firstName: '', lastName: '', email: '', phone: '', message: '' };
-  errors = { firstName: '', email: '', message: '' };
+  errors = { firstName: '', email: '', phone: '', message: '' };
   showToast = false;
   toastMessage = '';
   toastType: 'success' | 'error' = 'success';
+  submitType: 'whatsapp' | 'email' = 'whatsapp';
 
   contactInfo = [
     { label: 'Visit Us', icon: 'bi-geo-alt', value: '<span class="text-secondary">New Delhi, India</span>', iconBg: 'bg-primary bg-opacity-10', iconColor: 'text-primary' },
@@ -85,12 +90,19 @@ export class ContactComponent {
   ];
 
   validate(): boolean {
-    this.errors = { firstName: '', email: '', message: '' };
+    this.errors = { firstName: '', email: '', phone: '', message: '' };
     let ok = true;
     if (!this.form.firstName.trim()) { this.errors.firstName = 'First name is required.'; ok = false; }
-    const ep = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!this.form.email.trim()) { this.errors.email = 'Email is required.'; ok = false; }
-    else if (!ep.test(this.form.email)) { this.errors.email = 'Please enter a valid email address.'; ok = false; }
+    
+    // Email is now optional, but validate format if provided
+    if (this.form.email.trim()) {
+      const ep = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!ep.test(this.form.email)) { this.errors.email = 'Please enter a valid email address.'; ok = false; }
+    }
+    
+    // Phone is now mandatory
+    if (!this.form.phone.trim()) { this.errors.phone = 'Phone number is required.'; ok = false; }
+    
     if (!this.form.message.trim()) { this.errors.message = 'Message is required.'; ok = false; }
     return ok;
   }
@@ -98,12 +110,19 @@ export class ContactComponent {
   sendMessage() {
     if (!this.validate()) { this.toast('Please fill in all required fields correctly.', 'error'); return; }
     const { firstName, lastName, email, phone, message } = this.form;
-    const recipients = 'kamal.insurance@gmail.com,surajKr80109@gmail.com,amit68568@gmail.com';
-    const subject = `New Inquiry from ${firstName} ${lastName}`;
-    const body = `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`;
-    window.location.href = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    if (this.submitType === 'whatsapp') {
+      const waBody = `*New Inquiry*\n\n*Name:* ${firstName} ${lastName}\n*Email:* ${email}\n*Phone:* ${phone}\n\n*Message:*\n${message}`;
+      window.open(`https://wa.me/918448771203?text=${encodeURIComponent(waBody)}`, '_blank');
+    } else {
+      const recipients = 'kamal.insurance@gmail.com,surajKr80109@gmail.com,amit68568@gmail.com';
+      const subject = `New Inquiry from ${firstName} ${lastName}`;
+      const emailBody = `Name: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\n\nMessage:\n${message}`;
+      window.location.href = `mailto:${recipients}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
+    }
+
     this.form = { firstName: '', lastName: '', email: '', phone: '', message: '' };
-    this.toast("Your message has been sent! We'll get back to you shortly.", 'success');
+    this.toast("Your message request has been initiated! We'll get back to you shortly.", 'success');
   }
 
   toast(msg: string, type: 'success' | 'error') {
